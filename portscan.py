@@ -13,6 +13,6 @@ for port in range(1, 1000):
     ping = sock.connect_ex((ip,port))
     #verify if the connection is success or not and print the port if success.
     if(ping==0):
-        print('Pord %d: OPEN' %(port,))
+        print('Pord %d: OPEN' %(port))
     #close the tcp connection.
     sock.close()
