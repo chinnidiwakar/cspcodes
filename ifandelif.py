@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
-op=input("Please Choose the Function('+,-,*,/'): ")
-var1=int(input("Please Enter Value 1: "))
-var2=int(input("Please Enter Value 2: "))
-def add(x,y):
-        return (x+y)
-def subs(x,y):
-        return (x-y)
-def mul(x,y):
-        return (x*y)
-def div(x,y):
-        return (x/y)
-if op=='+':
-        print(var1,"+",var2, "=", add(var1,var2))
-elif op=='-':
-        print(var1,"-",var2, "=", subs(var1,var2))
-elif op=='*':
-        print(var1,"*",var2, "=", mul(var1,var2))
-elif op=='/':
-        print(var1,"/",var2, "=", div(var1,var2))
+from func import *
+a = int(input('Enter first number: '))
+b = int(input('Enter second number: '))
+c = input('Enter +,-,*,/: ')
+
+if str(c)=='+':
+    print("The Addition Two Numbers is :",add(a,b))
+elif str(c)=='-':
+    print("The Substraction Two Numbers is :",sub(a,b))
+elif str(c)=='/':
+    print("The Division Two Numbers is :",div(a,b))
+elif str(c)=='*':
+    print("The Multiplication Two Numbers is :",mul(a,b))
 else:
-        print("calc error")
+    print("You have selected an invalid option, Please Try again")
+    exit()
