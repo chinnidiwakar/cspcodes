@@ -6,3 +6,5 @@ for x in range(0,a):
     print("192.168.0.%d"%(x))
 for ip in range(0, 255):
     print("192.168.0."+str(ip))
+for x in range(10):
+   print("This is",x )
