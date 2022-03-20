@@ -67,6 +67,7 @@ else:
 #!/usr/bin/env python3
 
 #install the below components
+#sudo apt-get install python3-pip
 #python3 -m pip install --upgrade pip
 #pip3 install validators
 
