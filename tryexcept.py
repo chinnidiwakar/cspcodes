@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-data=input("Please Enter a letter: ")
-if type(data) == True :
-    print ("it is a text value")
-else:
-    print ("It is not a text value")
 try:
-    data2=int(input("Please enter port: "))
+    port=int(input("Please enter a port number: "))
+    if port < 65535 and port > 0:
+        print("Your Port Number is",port)
+    else:
+        print("Your Port Number is Invalid")
 except ValueError:
-    print ("not a number")
+    print("Its not a number")
     exit()
-if data2 < 65535 and data2 > 0:
-    print ("it is a valid port")
+except KeyboardInterrupt:
+    print("\nUser closed the program")
+    exit()
 else:
-    print ("it is invalid port")
+    print("Task Completed Successfully")
+finally:
+    print("Thank You For Using")
