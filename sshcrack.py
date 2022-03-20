@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import socket,os,sys,paramiko
+import os,sys,paramiko
 
 global host, username, file
 
