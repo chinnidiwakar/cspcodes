@@ -69,6 +69,7 @@ else:
 #install the below components
 #sudo apt-get install python3-pip
 #python3 -m pip install --upgrade pip
+#python3 -m pip install validators
 #pip3 install validators
 
 #import necessary modules
