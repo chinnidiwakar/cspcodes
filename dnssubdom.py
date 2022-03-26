@@ -2,7 +2,21 @@
 import requests 
 import sys 
 
-sub_list = open("subdomains.txt").read() 
+global host, wordlist
+
+try:
+    host=input("\nPlease Enter The Server Domain/IP: ")
+    wordlist=input("\nPlease Enter Password Dictionary With Full Path: ")
+    if os.path.exists(wordlist) == False:
+        print("\nFile Doesnt Exists :(")
+        sys.exit()
+    else:
+        print("\nLoading The Password File :)")
+except KeyboardInterrupt:
+   print("\nUser Stopped The Script :(")
+   sys.exit()
+
+sub_list = open(wordlist).read() 
 subdoms = sub_list.splitlines()
 
 for sub in subdoms:
