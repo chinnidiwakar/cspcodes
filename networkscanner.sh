@@ -1,8 +1,6 @@
 #!/bin/bash
 figlet -ctf big  "WELCOME TO MY NETWORK SCANNER"
-figlet -f slant "by 5H4D0W3Y7E_5U1D"
 echo "    "
-
 echo "(Please Wait Scanner is starting)"
 echo "     "
 read -p "Please Enter Your IP Range: " ip
