@@ -30,3 +30,18 @@ for sub in subdoms:
     
     else:
         print("Valid domain: ",sub_domains)
+
+        
+        
+        
+"""#!/usr/bin/env python3
+import requests
+host=input("\nPlease enter your target Domain name: ")
+subs=open("/root/PycharmProjects/pythonProject/dictionary.txt", "r").read()
+doms=subs.splitlines()
+for xyz in doms:
+    try:
+        requests.get("http://"+xyz+"."+host)
+        print("http://"+xyz+"."+host)
+    except requests.ConnectionError:
+        pass
