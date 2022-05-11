@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
-try:
+
+try: #trying to execute somecode
     port=int(input("Please enter a port number: "))
-    if port < 65535 and port > 0:
-        print("Your Port Number is",port)
+    if port < 65534 and port > 0:
+        print("Your port number is",port)
     else:
-        print("Your Port Number is Invalid")
+        print("Your port number is invalid")
+#what to do if value error occurs
 except ValueError:
-    print("Its not a number")
+    print("It is not a number")
     exit()
+#what to do if keyboard interrupt occurts
 except KeyboardInterrupt:
-    print("\nUser closed the program")
+    print("\nYou Pressed Control+C, Exiting")
     exit()
+#what to do only if no exceptions are triggered
 else:
     print("Task Completed Successfully")
+#what to do always.
 finally:
-    print("Thank You For Using")
+    print("Thanks for using this script")
